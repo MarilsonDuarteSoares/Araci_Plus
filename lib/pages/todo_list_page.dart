@@ -3,54 +3,34 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:async';
 import 'package:araci_plus/pages/Segunda_Pagina.dart';
 
-
-
-
-
 class TodoListPage extends StatefulWidget {
   TodoListPage({super.key});
 
   @override
   State<TodoListPage> createState() => _TodoListPageState();
-
-
 }
 
-
-
 class _TodoListPageState extends State<TodoListPage> {
-
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 8)).whenComplete(() {
       Navigator.push(context, MaterialPageRoute(builder:(context)=> segundaPagina(),),);
-
-
       //setState(() {
         //opacityLevel = 1.0;
      // });
     });
-
     super.initState();
   }
-
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
           backgroundColor: Colors.green,
           centerTitle: true,
           title: Text('Araci.lab', style: TextStyle(
             fontSize: 25, fontFamily: 'Raleway', fontWeight: FontWeight.bold,),)
       ),
-
-
 
       body: Stack(
         children: <Widget>[
@@ -75,7 +55,6 @@ class _TodoListPageState extends State<TodoListPage> {
               padding: EdgeInsets.all(100),
             ),
           ),
-
           Positioned(
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 92.0),
@@ -116,23 +95,8 @@ class _TodoListPageState extends State<TodoListPage> {
                 ),
               )
           ),
-
           ],
-
-
       ),
-
-
-
     );
-
-
   }
-
-
-
 }
-
-
-
-
