@@ -138,33 +138,19 @@ class _Item1State extends State<Item1> {
                 )
               ];
             },
+            body: Center(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text("ITEM 1!",style: TextStyle(fontSize: 35), ),
+                    SizedBox( height: 25, ),
+                    Text("Araci.lab é um braço da Araci Incubadora. ",style: TextStyle(fontSize: 14), ),
+                    SizedBox(height: 15, ),
+                  ]
+              ),
+            )
 
-
-
-
-
-
-
-            body: WillPopScope(
-                onWillPop: () async {
-                  return false;
-                },
-                child: Scaffold(
-
-                    body: Center(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-
-                            Text("ITEM 1!",style: TextStyle(fontSize: 35), ),
-
-                            SizedBox( height: 25, ),
-
-                            Text("Araci.lab é um braço da Araci Incubadora. ",style: TextStyle(fontSize: 14), ),
-
-
-                            SizedBox(height: 15, ),
-                          ]),
-                    )))));
+        )
+    );
   }
 }
