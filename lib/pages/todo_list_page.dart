@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:async';
 import 'package:araci_plus/pages/Segunda_Pagina.dart';
 
+
 class TodoListPage extends StatefulWidget {
   TodoListPage({super.key});
 
@@ -15,6 +16,7 @@ class _TodoListPageState extends State<TodoListPage> {
   void initState() {
     Future.delayed(const Duration(seconds: 8)).whenComplete(() {
       Navigator.push(context, MaterialPageRoute(builder:(context)=> segundaPagina(),),);
+
       //setState(() {
         //opacityLevel = 1.0;
      // });

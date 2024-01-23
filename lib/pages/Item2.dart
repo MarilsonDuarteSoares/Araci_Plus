@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:araci_plus/pages/Item1.dart';
-import 'package:araci_plus/pages/Item3.dart';
-import 'package:araci_plus/pages/Item4.dart';
-import 'package:araci_plus/pages/Item5.dart';
 
 
-enum MenuItem { item1, item2, item3, item4, item5 }
 
 
 class Item2 extends StatefulWidget {
@@ -19,79 +14,176 @@ class _Item2State extends State<Item2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: NestedScrollView(
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
+      //backgroundColor: Colors.lime ,
+        body: CustomScrollView (
+          slivers:[
                 SliverAppBar(
-                    //automaticallyImplyLeading: false,
                     pinned: true,
-                    expandedHeight: 185.0,
-                    //forceElevated: innerBoxIsScrolled,
-                    actions: [
-                      PopupMenuButton <MenuItem>(
-                          onSelected: (value){
-                            if (value == MenuItem.item1){
-                              // clicou item 1  Vai para a página ITEM 1 !!!
-                              Navigator.of (context).push(MaterialPageRoute(builder:(context) => const Item1(),));
-                            } else if (value == MenuItem.item2){
-                              // clicou item 2 Vai para a página ITEM 2 !!!
-                              Navigator.of (context).push(MaterialPageRoute(builder:(context) => const Item2(),));
-                            } else if (value == MenuItem.item3){
-                              // clicou item 3 Vai para a página ITEM 3 !!!
-                              Navigator.of (context).push(MaterialPageRoute(builder:(context) => const Item3(),));
-                            } else if (value == MenuItem.item4){
-                              // clicou item 4 Vai para a página ITEM 4 !!!
-                              Navigator.of (context).push(MaterialPageRoute(builder:(context) => const Item4(),));
-                            } else if (value == MenuItem.item5){
-                              // clicou item 5 Vai para a página ITEM 5 !!!
-                              Navigator.of (context).push(MaterialPageRoute(builder:(context) => const Item5(),));
-                            }
-                          },
-                          itemBuilder:(context)=> [
-                            PopupMenuItem (value: MenuItem.item1, child: Text('Sobre'),
-                            ),
-                            PopupMenuItem(value: MenuItem.item2, child: Text('Equipe'),
-                            ),
-                            PopupMenuItem(value: MenuItem.item3, child: Text('Configurações'),
-                            ),
-                            PopupMenuItem(value: MenuItem.item4, child: Text('Entrar'),
-                            ),
-                            PopupMenuItem(value: MenuItem.item5, child: Text('Rever Introdução'),
-                            ),
-                          ])
-                    ],
                     floating: false,
+
                     flexibleSpace: FlexibleSpaceBar(
                       centerTitle: true,
                       title: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset(
-                            "assets/images/regia_araci.png",
-                            fit: BoxFit.contain,
-                            height: 30,
-                          ),
-                          Text("ARACI.lab", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600))
+                          Text("Equipe Araci.lab", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600))
                         ],
                       ),
-                      background:Image.asset("assets/images/regia_araci.png", fit: BoxFit.cover,),
-                      // colocar background
                     )
-                )
-              ];
-            },
-            body: Center(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text("ITEM 2!",style: TextStyle(fontSize: 35), ),
-                    SizedBox( height: 25, ),
-                    Text("Araci.lab é um braço da Araci Incubadora. ",style: TextStyle(fontSize: 14), ),
-                    SizedBox(height: 15, ),
-                  ]),
-            )
+                ),
+
+
+            SliverToBoxAdapter(
+              
+             
+              child: Padding(padding: const EdgeInsets.all(15.0),
+                    
+                    child: ClipRRect(borderRadius: BorderRadius.circular(20),
+
+                      child: Container( height: 500, color: Colors.green,
+                      ),
+                    ),
+
+            ),
+
+            ),
+
+
+
+            SliverToBoxAdapter(
+
+
+              child: Padding(padding: const EdgeInsets.all(20.0),
+
+                child: ClipRRect(borderRadius: BorderRadius.circular(20),
+
+                  child: Container( height: 500, color: Colors.green,
+                  ),
+                ),
+
+              ),
+
+            ),
+
+
+            SliverToBoxAdapter(
+
+
+              child: Padding(padding: const EdgeInsets.all(20.0),
+
+                child: ClipRRect(borderRadius: BorderRadius.circular(20),
+
+                  child: Container( height: 500, color: Colors.green,
+                  ),
+                ),
+
+              ),
+
+            ),
+
+
+
+            SliverToBoxAdapter(
+
+
+              child: Padding(padding: const EdgeInsets.all(20.0),
+
+                child: ClipRRect(borderRadius: BorderRadius.circular(20),
+
+                  child: Container( height: 500, color: Colors.lightGreen.withOpacity(0.23),
+                    child: Center(
+                      child: Column(
+                        children: [
+                          SizedBox (height:15),
+                          //Container( height: 220, width:300,
+                          Image.asset("assets/images/team/STI-Mobile.png", height: 180, width:170,),
+                          SizedBox (height:20),
+                          Text("STI Mobile", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 25),),
+                          SizedBox (height:16),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('Gestão de Projetos : ', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),),
+                              Text( '  Cosme Faria Corrêa.'),
+                              ],
+                           ),
+
+                          SizedBox (height:35),
+
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('Desenvolvimento : \n\n\n\n', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),),
+
+                              Column(
+                                //mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                 Padding(padding: EdgeInsets.only(right: 44,top: 2, bottom: 3),
+                                  child: Text( '1) Ronald Maymone Sampaio;'),),
+
+                                  Padding(padding: EdgeInsets.only(right: 42,top: 2, bottom: 3),
+                                    child: Text( '2) Paulo Rodrigo L. Figueiredo;'),),
+
+                                  Padding(padding: EdgeInsets.only(right: 72,top: 2, bottom: 3),
+                                    child: Text( '3) Marilson Duarte Soares;'),),
+
+                                  Padding(padding: EdgeInsets.only(left: 2, right: 2,top: 2, bottom: 3),
+                                    child: Text( '4) Marcos Fernando Ramos Machado.'),),
+
+                                ],
+
+                              )
+                              ],
+                          ),
+
+
+                          SizedBox (height:25),
+
+
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text('Contribuição : ', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),),
+
+                              Text( ' Lucas de Castro Lopes.',),
+
+                                ],
+
+                              )
+
+
+
+                        ],
+
+                      ),
+
+
+
+                    )
+
+
+
+
+                ),
+
+              ),
+
+
+            ),
+
+            ),
+
+
+
+
+
+
+
+          ],
+
         )
     );
   }
