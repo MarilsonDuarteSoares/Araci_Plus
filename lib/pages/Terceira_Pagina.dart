@@ -83,16 +83,30 @@ class _terceiraPaginaState extends State<terceiraPagina> {
             },
             body: Center(
               child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  //mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    CircularProgressIndicator(),
-                    Text(
-                      "TERCEIRA PÁGINA",
-                    ),
+                    //CircularProgressIndicator(),
                     SizedBox(
-                      height: 20,
+                      height: 45,
                     ),
+                    Text("O Araci.lab",style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500,fontSize: 28)),
+                    SizedBox(
+                      height: 25,
+                    ),
+
+                    Text("O aplicativo ARACI.lab é um repositório de atividades direcionadas à formação profissional do estudante de Cinema e Audiovisual, bem como uma ponte para o mercado de trabalho interessado na contratação de estagiários e profissionais da área. O aplicativo está organizado em seções: workshops, cursos, palestras, ações das Ligas Acadêmicas discentes, projetos, podcasts e o banco de talentos. Este último é voltado para o público externo que busca perfis de profissionais ou estagiários para trabalhar em produções audiovisuais. ",style: TextStyle(fontSize: 14), ),
+
+
+
                   ]),
-            )));
+            ),
+
+
+
+
+
+
+
+        ));
   }
 }
